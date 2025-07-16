@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/website1.1/static/css/main.43bae0f7.css",
-    "main.js": "/website1.1/static/js/main.e8fb6e6f.js",
+    "main.css": "/website1.1/static/css/main.0f47e19b.css",
+    "main.js": "/website1.1/static/js/main.00f8a400.js",
     "static/js/453.fadaecfd.chunk.js": "/website1.1/static/js/453.fadaecfd.chunk.js",
     "static/media/main_logo_margaux.png": "/website1.1/static/media/main_logo_margaux.048e9e3acf6b23bc0760.png",
     "service-worker.js": "/website1.1/service-worker.js",
+    "static/media/logo_1_margaux.png": "/website1.1/static/media/logo_1_margaux.09ec677e1007010eaf08.png",
     "index.html": "/website1.1/index.html",
-    "main.43bae0f7.css.map": "/website1.1/static/css/main.43bae0f7.css.map",
-    "main.e8fb6e6f.js.map": "/website1.1/static/js/main.e8fb6e6f.js.map",
+    "main.0f47e19b.css.map": "/website1.1/static/css/main.0f47e19b.css.map",
+    "main.00f8a400.js.map": "/website1.1/static/js/main.00f8a400.js.map",
     "453.fadaecfd.chunk.js.map": "/website1.1/static/js/453.fadaecfd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.43bae0f7.css",
-    "static/js/main.e8fb6e6f.js"
+    "static/css/main.0f47e19b.css",
+    "static/js/main.00f8a400.js"
   ]
 }
