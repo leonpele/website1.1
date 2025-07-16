@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/website1.1/static/css/main.43bae0f7.css",
-    "main.js": "/website1.1/static/js/main.3072fc46.js",
+    "main.js": "/website1.1/static/js/main.06767a72.js",
     "static/js/453.fadaecfd.chunk.js": "/website1.1/static/js/453.fadaecfd.chunk.js",
+    "static/media/main_logo_margaux.png": "/website1.1/static/media/main_logo_margaux.048e9e3acf6b23bc0760.png",
     "service-worker.js": "/website1.1/service-worker.js",
-    "static/media/logo.svg": "/website1.1/static/media/logo.103b5fa18196d5665a7e12318285c916.svg",
     "index.html": "/website1.1/index.html",
     "main.43bae0f7.css.map": "/website1.1/static/css/main.43bae0f7.css.map",
-    "main.3072fc46.js.map": "/website1.1/static/js/main.3072fc46.js.map",
+    "main.06767a72.js.map": "/website1.1/static/js/main.06767a72.js.map",
     "453.fadaecfd.chunk.js.map": "/website1.1/static/js/453.fadaecfd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.43bae0f7.css",
-    "static/js/main.3072fc46.js"
+    "static/js/main.06767a72.js"
   ]
 }
