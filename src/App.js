@@ -1,12 +1,11 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import ProjetsPage from "./ProjetsPage";
 import PrestationsPage from "./PrestationsPage";
 import AProposPage from "./AProposPage";
 import ContactPage from "./ContactPage";
-import Principale1_1 from "./Principale1_1";
-import Principale2 from "./Principale2";
-import logo from './logo.svg';
+import logo from './main_logo_margaux.png';
+import logo1 from './logo_1_margaux.png';
 import './App.css';
 
 const images = [
@@ -52,14 +51,16 @@ const projets = [
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <header className="fixed top-0 left-0 w-full bg-white/90 backdrop-blur z-50 shadow-sm">
-      <div className="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
-        <div className="flex items-center gap-2">
-          <Link to="/" className="text-2xl font-bold tracking-tight text-gray-800 hover:text-beige-700 transition-colors">
-            Margaux COGREL
+    <header className="fixed top-0 left-0 w-full bg-white/90 backdrop-blur z-50 shadow-sm h-20">
+      <div className="max-w-6xl mx-auto flex items-center justify-between px-4 h-full">
+        <div className="flex items-center gap-2 h-full">
+          <img src={logo} alt="Logo Margaux" className="max-h-full h-auto w-auto" />
+          <Link to="/" className="flex flex-col justify-center text-2xl font-bold tracking-tight text-gray-800 hover:text-beige-700 transition-colors">
+            MARGAUX COGREL
+            <span className="text-base font-normal leading-none -mt-1 tracking-wide" style={{ fontFamily: 'Playfair Display, serif' }}>architecte d'intérieur</span>
           </Link>
         </div>
-        <nav className="hidden md:flex gap-8 text-lg font-medium">
+        <nav className="hidden md:flex gap-8 text-sm font-medium uppercase">
           <Link to="/projets" className="hover:text-beige-700 transition-colors">Projets</Link>
           <Link to="/prestations" className="hover:text-beige-700 transition-colors">Prestations</Link>
           <Link to="/a-propos" className="hover:text-beige-700 transition-colors">À propos</Link>
@@ -78,10 +79,10 @@ function Header() {
         {/* Mobile menu */}
         {menuOpen && (
           <div className="absolute top-full right-4 mt-2 w-48 bg-white rounded shadow-lg flex flex-col py-2 md:hidden animate-fade-in">
-            <Link to="/projets" className="px-4 py-2 hover:bg-beige-100" onClick={() => setMenuOpen(false)}>Projets</Link>
-            <Link to="/prestations" className="px-4 py-2 hover:bg-beige-100" onClick={() => setMenuOpen(false)}>Prestations</Link>
-            <Link to="/a-propos" className="px-4 py-2 hover:bg-beige-100" onClick={() => setMenuOpen(false)}>À propos</Link>
-            <Link to="/contact" className="px-4 py-2 hover:bg-beige-100" onClick={() => setMenuOpen(false)}>Contact</Link>
+            <Link to="/projets" className="px-4 py-2 hover:bg-beige-100 uppercase text-sm font-medium" onClick={() => setMenuOpen(false)}>PROJETS</Link>
+            <Link to="/prestations" className="px-4 py-2 hover:bg-beige-100 uppercase text-sm font-medium" onClick={() => setMenuOpen(false)}>PRESTATIONS</Link>
+            <Link to="/a-propos" className="px-4 py-2 hover:bg-beige-100 uppercase text-sm font-medium" onClick={() => setMenuOpen(false)}>À PROPOS</Link>
+            <Link to="/contact" className="px-4 py-2 hover:bg-beige-100 uppercase text-sm font-medium" onClick={() => setMenuOpen(false)}>CONTACT</Link>
           </div>
         )}
       </div>
@@ -90,40 +91,25 @@ function Header() {
 }
 
 function Carousel() {
-  const [current, setCurrent] = useState(0);
-  const total = images.length;
-
-  const prev = () => setCurrent((prev) => (prev - 1 + total) % total);
-  const next = () => setCurrent((prev) => (prev + 1) % total);
-
   return (
-    <div className="relative w-full max-w-xl mx-auto mt-10 md:mt-16 flex items-center justify-center">
-      {/* Image principale */}
-      <div className="flex-1 flex items-center justify-center">
-        <img
-          src={images[current].url || images[current]}
-          alt={images[current].caption || `photo ${current + 1}`}
-          className="w-full h-72 md:h-[420px] object-cover object-center"
-          draggable="false"
-        />
+    <div
+      className="relative w-full h-[60vh] md:h-[80vh] flex items-center justify-center overflow-hidden select-none"
+    >
+      <div
+        className="w-full h-full flex flex-row overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-hide min-w-full"
+        style={{ WebkitOverflowScrolling: 'touch', scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+      >
+        {images.map((img, idx) => (
+          <img
+            key={idx}
+            src={img.url || img}
+            alt={img.caption || `photo ${idx + 1}`}
+            className="w-full h-full object-cover object-center flex-shrink-0 snap-center"
+            draggable="false"
+            style={{ minWidth: '100%' }}
+          />
+        ))}
       </div>
-      {/* Flèches navigation */}
-      <button
-        className="absolute left-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-beige-100 rounded-full p-2 shadow"
-        onClick={prev}
-        aria-label="Image précédente"
-        style={{ left: '-2.5rem' }}
-      >
-        <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
-      </button>
-      <button
-        className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-beige-100 rounded-full p-2 shadow"
-        onClick={next}
-        aria-label="Image suivante"
-        style={{ right: '-2.5rem' }}
-      >
-        <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
-      </button>
     </div>
   );
 }
@@ -144,7 +130,7 @@ function Projets() {
               <img
                 src={projet.image}
                 alt={projet.titre}
-                className="rounded-xl shadow-lg w-full h-64 object-cover object-center"
+                className="w-full h-64 object-cover object-center"
               />
             </div>
             <div className="md:w-1/2 w-full">
@@ -180,16 +166,13 @@ function App() {
           <Route path="/prestations" element={<PrestationsPage />} />
           <Route path="/a-propos" element={<AProposPage />} />
           <Route path="/contact" element={<ContactPage />} />
-          <Route path="/principale1-1" element={<Principale1_1 />} />
-          <Route path="/principale2" element={<Principale2 />} />
         </Routes>
         <footer className="mt-24 pb-8">
-          <div className="text-center text-xs text-gray-400 tracking-wide mb-2">
-            2025 - Margaux COGREL - architecte d'intérieur
-          </div>
-          <div className="flex flex-wrap justify-center gap-4 text-xs text-gray-400">
-            <Link to="/principale1-1" className="underline hover:text-beige-700">Principale 1.1</Link>
-            <Link to="/principale2" className="underline hover:text-beige-700">Principale 2</Link>
+          <div className="flex flex-col items-center justify-center gap-2">
+            <img src={logo1} alt="Logo Margaux 1" className="h-8 w-auto mb-1" />
+            <div className="text-center text-xs text-gray-400 tracking-wide mb-2">
+            © 2025 - MARGAUX COGREL - architecte d'intérieur
+            </div>
           </div>
         </footer>
       </div>

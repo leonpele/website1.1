@@ -23,10 +23,10 @@ export default function PrestationsPage() {
   return (
     <main className="pt-5 md:pt-10 flex-1">
       <section className="max-w-3xl mx-auto py-20 px-4">
-        <h1 className="text-4xl font-bold mb-12 text-center text-gray-800 tracking-tight">Prestations</h1>
+        
         <ul className="flex flex-col gap-10">
           {prestations.map((presta) => (
-            <li key={presta.titre} className="bg-white rounded-xl shadow p-6">
+            <li key={presta.titre} className="bg-white shadow p-6 border border-black/60">
               <h2 className="text-xl font-semibold text-beige-700 mb-2">{presta.titre}</h2>
               <p className="text-gray-600">{presta.description}</p>
             </li>

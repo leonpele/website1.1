@@ -4,10 +4,10 @@ export default function ContactPage() {
   return (
     <main className="pt-20 min-h-screen bg-gray-50">
       <section className="max-w-md mx-auto py-20 px-4">
-        <h1 className="text-4xl font-bold mb-8 text-center text-gray-800 tracking-tight">Contact</h1>
+        
         {/* Réseaux sociaux en avant */}
         <div className="flex flex-col items-center mb-10">
-          <span className="text-gray-700 text-base font-semibold mb-3">Retrouvez-moi sur :</span>
+          
           <div className="flex gap-8 mb-2">
             <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-beige-700 text-gray-500 transition-colors">
               <svg width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="5" strokeWidth="2"/><circle cx="12" cy="12" r="4" strokeWidth="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg>
